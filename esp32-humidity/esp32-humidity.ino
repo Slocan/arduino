@@ -1,3 +1,8 @@
+// Hardware: ESP32 - OLED SSD1306 screen - Humidity sensor
+// Purpose: Tracks the soil moisture from the sensor, and displays percentage on a screen
+// AirValue and WaterValue need to be calibrated for the sensor
+
+
 // Init libraries for Oled display ssd1306, 128x32
 #include <Wire.h>
 #include <Adafruit_GFX.h>
