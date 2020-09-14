@@ -5,6 +5,7 @@
 // Wifi functions from https://techtutorialsx.com/2017/06/29/esp32-arduino-getting-started-with-wifi/
 
 #include <WiFi.h>
+#include <HTTPClient.h>
 
 #include "DHT.h"
 
@@ -66,12 +67,12 @@ void scanNetworks() {
 void connectToNetwork() {
   WiFi.begin(ssid, password);
  
-  while (WiFi.status() != WL_CONNECTED) {
-    delay(1000);
-    Serial.println("Establishing connection to WiFi..");
+  delay(1000);
+  if (WiFi.status() == WL_CONNECTED) {
+    Serial.println("Connected to network");
+  } else {
+    Serial.println("Connection failed");
   }
- 
-  Serial.println("Connected to network");
  
 }
  
